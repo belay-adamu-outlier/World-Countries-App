@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchBar, FormGroupSearch } from "./styles/styles";
+import { SearchBar, FormGroupSearch } from "./styles/SearchComponent.styled";
 
 export default function SearchComponent() {
   return (

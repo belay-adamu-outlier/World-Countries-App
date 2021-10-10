@@ -1,13 +1,20 @@
 import React from "react";
-import Header from './components/Header/Header'
-import SearchComponent from "./components/SearchComponent/SeachComponent";
-import CustomeSelect from "./components/SelectComponent/CustomeSelect";
+import Header from "./components/Header";
+import SearchComponent from "./components/SearchComponent";
+import CustomeSelect from "./components/SelectComponent";
+import CardDashBoardComponent from "./components/CardDashBordComponent";
+import GlobalStyles from "./GlobalStyles";
+import { StyledFlexContainer } from "./FlexContainer.styled";
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <Header />
-      <SearchComponent />
-      <CustomeSelect />
+      <StyledFlexContainer>
+        <SearchComponent />
+        <CustomeSelect />
+      </StyledFlexContainer>
+      <CardDashBoardComponent />
     </div>
   );
 }

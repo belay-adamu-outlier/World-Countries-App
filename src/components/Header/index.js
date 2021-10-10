@@ -1,5 +1,9 @@
 import React from "react";
-import { HeaderWrapper, TitleWrapper, ThemeToggler } from "./styles/styles";
+import {
+  HeaderWrapper,
+  TitleWrapper,
+  ThemeToggler,
+} from "./styles/Header.styled";
 
 export default function Header() {
   return (

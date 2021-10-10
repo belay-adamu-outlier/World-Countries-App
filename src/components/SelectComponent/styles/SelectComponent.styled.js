@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const StyledSelectWrapper = styled.div`
   position: relative;
-  height: 5rem;
+  height: 4.6rem;
   display: grid;
-  width: 50%;
-  margin: 4rem 1.5rem;
+  width: 160px;
+  margin: 4rem 1.5rem 0 1.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: ${(props) => (props.dark ? "white" : "hsl(200, 15%, 8%)")};
@@ -21,14 +21,14 @@ export const StyledSelectWrapper = styled.div`
     background-color: black;
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     position: absolute;
-    top: 2.25rem;
+    top: 2.05rem;
     right: 1rem;
   }
 `;
 
 export const StyledSelect = styled.select`
   width: 100%;
-  height: 5rem;
+  height: 4.6rem;
   padding: 0 2rem;
   border-radius: 0.5rem;
   background-color: ${(props) =>

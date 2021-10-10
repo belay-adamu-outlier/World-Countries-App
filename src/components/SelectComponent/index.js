@@ -1,5 +1,8 @@
 import React from "react";
-import { StyledSelect, StyledSelectWrapper } from "./styles";
+import {
+  StyledSelect,
+  StyledSelectWrapper,
+} from "./styles/SelectComponent.styled";
 
 export default function CustomeSelect() {
   return (

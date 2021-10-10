@@ -9,6 +9,10 @@ export const HeaderWrapper = styled.header`
   box-shadow: 1px 0px 2px gray;
   background-color: ${(props) => (props.dark ? "hsl(207, 26%, 17%)" : "")};
   color: ${(props) => (props.dark ? "hsl(0, 0%, 100%)" : "")};
+
+  @media (min-width: 992px) {
+    padding: 0 5% 0 5%;
+  }
 `;
 
 export const TitleWrapper = styled.span`
