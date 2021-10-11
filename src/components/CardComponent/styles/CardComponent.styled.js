@@ -29,7 +29,7 @@ export const StyledDetails = styled.div`
   h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    text-overflow: clip;
+    text-overflow: ellipsis;
     max-width: 210px;
     display: inline-block;
     overflow: hidden;

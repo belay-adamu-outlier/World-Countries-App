@@ -5,16 +5,18 @@ import CustomeSelect from "./components/SelectComponent";
 import CardDashBoardComponent from "./components/CardDashBordComponent";
 import GlobalStyles from "./GlobalStyles";
 import { StyledFlexContainer } from "./FlexContainer.styled";
+import CardDetailsComponent from "./components/CardDetailsComponent";
 function App() {
   return (
     <div className="App">
       <GlobalStyles />
       <Header />
-      <StyledFlexContainer>
+      {/* <StyledFlexContainer>
         <SearchComponent />
         <CustomeSelect />
       </StyledFlexContainer>
-      <CardDashBoardComponent />
+      <CardDashBoardComponent /> */}
+      <CardDetailsComponent />
     </div>
   );
 }
