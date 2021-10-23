@@ -5,15 +5,15 @@ import {
   StyledFlag,
   StyledFlexWrapper,
   StyledDetailsWrapper,
-  StyledBorderContriesWrapper,
-} from "./styles/CardDetailsComponent.styled";
-export default function CardDetailsComponent() {
+  StyledBorderContriesWrapper
+} from './styles/CardDetailsComponent.styled'
+export default function CardDetailsComponent () {
   return (
     <>
       <StyledButtonWrapper>
         <StyledButton>
-          {" "}
-          <i className="fa fa-long-arrow-left"></i>&nbsp; Back
+          <i className='fa fa-long-arrow-left' />
+          &nbsp; Back
         </StyledButton>
       </StyledButtonWrapper>
       <StyledFlexWrapper>
@@ -61,5 +61,5 @@ export default function CardDetailsComponent() {
         </StyledDetailsWrapper>
       </StyledFlexWrapper>
     </>
-  );
+  )
 }

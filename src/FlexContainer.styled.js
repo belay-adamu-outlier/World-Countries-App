@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledFlexContainer = styled.div`
   display: flex;
@@ -13,4 +13,4 @@ export const StyledFlexContainer = styled.div`
     width: 90%;
     margin: 0 auto;
   }
-`;
+`

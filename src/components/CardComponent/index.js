@@ -1,10 +1,10 @@
 import {
   StyledCard,
   StyledFlag,
-  StyledDetails,
-} from "./styles/CardComponent.styled";
+  StyledDetails
+} from './styles/CardComponent.styled'
 
-export default function CardComponent() {
+export default function CardComponent () {
   return (
     <StyledCard dark>
       <StyledFlag />
@@ -21,5 +21,5 @@ export default function CardComponent() {
         </h3>
       </StyledDetails>
     </StyledCard>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledButton = styled.button`
   width: 100px;
@@ -6,8 +6,8 @@ export const StyledButton = styled.button`
   padding: 4px 15px;
   margin: 10px 0 0 10px;
   background-color: ${({ dark }) =>
-    dark ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 100%)"};
-  color: ${({ dark }) => (dark ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)")};
+    dark ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 100%)'};
+  color: ${({ dark }) => (dark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)')};
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
@@ -23,21 +23,25 @@ export const StyledButton = styled.button`
   &:active {
     box-shadow: 0 0 1px gray;
     background-color: ${({ dark }) =>
-      dark ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)"};
-    color: ${({ dark }) => (dark ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)")};
+      dark ? 'hsl(0, 0%, 100%)' : 'hsl(207, 26%, 17%)'};
+    color: ${({ dark }) => (dark ? 'hsl(200, 15%, 8%)' : 'hsl(0, 0%, 100%)')};
   }
-`;
+`
 
 export const StyledCountriesButton = styled(StyledButton)`
   width: 120px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-`;
+`
 
 export const StyledButtonWrapper = styled.div`
   margin: 20px 0 0 10px;
-`;
+
+  @media (min-width: 992px) {
+    margin: 20px 5% 0 5%;
+  }
+`
 
 export const StyledFlexWrapper = styled.div`
   display: flex;
@@ -45,7 +49,11 @@ export const StyledFlexWrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin: 50px auto 0 auto;
-`;
+
+  @media (min-width: 1390px) {
+    align-items: center;
+  }
+`
 
 export const StyledFlag = styled.div`
   width: 320px;
@@ -57,7 +65,11 @@ export const StyledFlag = styled.div`
     width: 400px;
     height: 250px;
   }
-`;
+  @media (min-width: 1390px) {
+    width: 700px;
+    height: 438px;
+  }
+`
 
 export const StyledDetailsWrapper = styled.div`
   display: flex;
@@ -139,7 +151,7 @@ export const StyledDetailsWrapper = styled.div`
       }
     }
   }
-`;
+`
 
 export const StyledBorderContriesWrapper = styled.div`
   display: flex;
@@ -168,4 +180,4 @@ export const StyledBorderContriesWrapper = styled.div`
     margin-right: 10px;
     margin-left: auto;
   }
-`;
+`

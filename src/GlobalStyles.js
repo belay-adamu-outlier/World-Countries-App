@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 :root {
@@ -15,8 +15,8 @@ const GlobalStyles = createGlobalStyle`
 }
 body{
     background-color: ${({ dark }) =>
-      dark ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)"};
-    color: ${({ dark }) => (dark ? "hsl(0, 0%, 100%)" : "hsl(200, 15%, 8%)")};
+      dark ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)'};
+    color: ${({ dark }) => (dark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)')};
 }
 .App {
   font-family: "Nunito Sans", sans-serif;
@@ -25,5 +25,5 @@ body{
   flex-direction: column;
   flex-wrap: wrap;
 }
-`;
-export default GlobalStyles;
+`
+export default GlobalStyles

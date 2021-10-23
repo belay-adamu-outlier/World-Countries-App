@@ -1,14 +1,14 @@
-import React from "react";
-import Header from "./components/Header";
-import SearchComponent from "./components/SearchComponent";
-import CustomeSelect from "./components/SelectComponent";
-import CardDashBoardComponent from "./components/CardDashBordComponent";
-import GlobalStyles from "./GlobalStyles";
-import { StyledFlexContainer } from "./FlexContainer.styled";
-import CardDetailsComponent from "./components/CardDetailsComponent";
-function App() {
+import React from 'react'
+import Header from './components/Header'
+// import SearchComponent from "./components/SearchComponent";
+// import CustomeSelect from "./components/SelectComponent";
+// import CardDashBoardComponent from "./components/CardDashBordComponent";
+import GlobalStyles from './GlobalStyles'
+// import { StyledFlexContainer } from "./FlexContainer.styled";
+import CardDetailsComponent from './components/CardDetailsComponent'
+function App () {
   return (
-    <div className="App">
+    <div className='App'>
       <GlobalStyles />
       <Header />
       {/* <StyledFlexContainer>
@@ -18,7 +18,7 @@ function App() {
       <CardDashBoardComponent /> */}
       <CardDetailsComponent />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
