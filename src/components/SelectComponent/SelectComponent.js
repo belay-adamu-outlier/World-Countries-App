@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../Context/Context'
 import {
   StyledSelect,
   StyledSelectWrapper
 } from './styles/SelectComponent.styled'
 
 export default function CustomeSelect () {
+  const {
+    LoadByRegion,
+    darkTheme
+  } = useContext(AppContext)
   return (
     <StyledSelectWrapper>
-      <StyledSelect>
+      <StyledSelect
+        dark={darkTheme}
+        onChange={(e) => {
+          LoadByRegion(e.target.value)
+        }}
+      >
         <option value='Africa'>Africa</option>
         <option value='America'>America</option>
         <option value='Asia'>Asia</option>

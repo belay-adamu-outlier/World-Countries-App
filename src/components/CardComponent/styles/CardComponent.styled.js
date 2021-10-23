@@ -21,7 +21,10 @@ export const StyledCard = styled.div`
 export const StyledFlag = styled.div`
   height: 45%;
   width: 100%;
-  background-color: green;
+  background-image: ${({ bgImg }) => bgImg ? `url(${bgImg})` : 'none'};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 export const StyledDetails = styled.div`
@@ -30,15 +33,16 @@ export const StyledDetails = styled.div`
     font-size: 1.8rem;
     margin-bottom: 10px;
     text-overflow: ellipsis;
-    max-width: 210px;
+    width: 210px;
     display: inline-block;
     overflow: hidden;
+    white-space:nowrap;
   }
   h3 {
     font-size: 1.4rem;
     margin-bottom: 5px;
     span {
-      font: 1.3rem;
+      font-size: 1.3rem;
     }
   }
 `

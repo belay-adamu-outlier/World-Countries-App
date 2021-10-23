@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../Context/Context'
 import {
   HeaderWrapper,
   TitleWrapper,
@@ -6,10 +7,11 @@ import {
 } from './styles/Header.styled'
 
 export default function Header () {
+  const { darkTheme, toggleTheme } = useContext(AppContext)
   return (
-    <HeaderWrapper>
+    <HeaderWrapper dark={darkTheme}>
       <TitleWrapper>Where in the world?</TitleWrapper>
-      <ThemeToggler>
+      <ThemeToggler onClick={toggleTheme}>
         <i className='fa fa-moon-o icon' />
         <span>&nbsp;&nbsp;Dark Mode</span>
       </ThemeToggler>

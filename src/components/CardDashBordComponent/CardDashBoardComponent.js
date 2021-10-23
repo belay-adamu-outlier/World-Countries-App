@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react'
-import CardComponent from '../CardComponent/index.js'
+import { useState, useEffect, useContext } from 'react'
+import CardComponent from '../CardComponent/CardComponent'
 import StyledCardDashBoardComponent from './styles/CardDashBoardComponent.styled.js'
+import { AppContext } from '../Context/Context.js'
 
 export default function CardDashBoardComponent () {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   )
+  const { countries } = useContext(AppContext)
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -14,7 +16,7 @@ export default function CardDashBoardComponent () {
       window.removeEventListener('resize', handleResize)
     }
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   function handleResize () {
     setWindowDimensions(getWindowDimensions())
@@ -26,27 +28,13 @@ export default function CardDashBoardComponent () {
       height
     }
   }
-
   return (
-    <StyledCardDashBoardComponent height={windowDimensions.height}>
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
-      <CardComponent />
+    <StyledCardDashBoardComponent
+      height={windowDimensions.height}
+    >
+      {countries.map((country, index) => {
+        return <CardComponent country={country} key={index} />
+      })}
     </StyledCardDashBoardComponent>
   )
 }
