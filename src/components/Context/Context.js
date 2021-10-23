@@ -10,7 +10,7 @@ export const AppContext = createContext(defaultValue)
 
 export default function Context ({ children }) {
   const [countries, setCountries] = useState([])
-  const [selectedCountry, setSelectedCountry] = useState({})
+  const [selectedCountry, setSelectedCountry] = useState(null)
   const [darkTheme, setDarkTheme] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [errorLoading, setErrorLoading] = useState(false)
@@ -45,6 +45,7 @@ export default function Context ({ children }) {
     const selectedOne = countries.filter((country) => {
       return country.name.common === name
     })
+    console.log(selectedOne)
     setSelectedCountry(selectedOne)
   }
 

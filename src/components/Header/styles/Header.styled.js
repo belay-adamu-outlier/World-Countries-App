@@ -21,6 +21,7 @@ export const TitleWrapper = styled.span`
   padding-left: 1.5rem;
 `
 export const ThemeToggler = styled.div`
+  cursor: pointer;
   font-size: 1.3rem;
   font-weight: 600;
   padding-right: 1.4rem;

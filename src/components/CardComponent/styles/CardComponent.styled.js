@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const StyledCard = styled.div`
   width: 260px;
@@ -17,7 +18,10 @@ export const StyledCard = styled.div`
     box-shadow: 0 0 15px black;
   }
 `
-
+export const LinkWrapper = styled(Link)`
+  display: block;
+  text-decoration: none;
+`
 export const StyledFlag = styled.div`
   height: 45%;
   width: 100%;
