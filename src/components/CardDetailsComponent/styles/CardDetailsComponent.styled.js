@@ -58,8 +58,11 @@ export const StyledFlexWrapper = styled.div`
 export const StyledFlag = styled.div`
   width: 320px;
   height: 200px;
-  background-color: green;
   margin: 0 auto;
+  background-image: ${({ bgImg }) => bgImg ? `url(${bgImg})` : 'none'};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   @media (min-width: 768px) {
     width: 400px;

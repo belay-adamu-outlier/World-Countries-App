@@ -9,6 +9,7 @@ import {
 
 export default function CardComponent ({ country }) {
   const { darkTheme, filterCountry } = useContext(AppContext)
+
   function numberWithCommas (x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }

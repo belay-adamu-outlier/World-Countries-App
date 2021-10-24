@@ -18,6 +18,7 @@ export default function CustomeSelect () {
           LoadByRegion(e.target.value)
         }}
       >
+        <option value='World' defaultValue>World</option>
         <option value='Africa'>Africa</option>
         <option value='America'>America</option>
         <option value='Asia'>Asia</option>

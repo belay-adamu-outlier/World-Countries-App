@@ -22,31 +22,32 @@ export default function Context ({ children }) {
 
   async function setFetchedCountry (name) {
     const fetchedCountry = await getCountry()
-    setIsLoading(false)
-    if (countries.error) setErrorLoading(true)
-    setSelectedCountry(fetchedCountry)
+    updateState(fetchedCountry)
   }
 
   async function setFetchedCountries () {
     const fetchedCountries = await getCountries()
-    setIsLoading(false)
-    if (countries.error) setErrorLoading(true)
-    setCountries(fetchedCountries)
+    updateState(fetchedCountries)
   }
 
   async function setFetchedCountriesByRegion (region) {
-    const fetchedCountries = await getCountriesByRegion(region)
-    setIsLoading(false)
-    if (countries.error) setErrorLoading(true)
-    setCountries(fetchedCountries)
+    let fetchedCountries
+    region === 'World'
+      ? fetchedCountries = await getCountries()
+      : fetchedCountries = await getCountriesByRegion(region)
+    updateState(fetchedCountries)
   }
 
   function filterCountry (name) {
     const selectedOne = countries.filter((country) => {
       return country.name.common === name
     })
-    console.log(selectedOne)
     setSelectedCountry(selectedOne)
+  }
+  function updateState(fetchedData) {
+    setIsLoading(false)
+    if (countries.error) setErrorLoading(true)
+    setCountries(fetchedData)
   }
 
   return (
