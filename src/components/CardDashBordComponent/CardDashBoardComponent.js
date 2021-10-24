@@ -21,6 +21,7 @@ export default function CardDashBoardComponent () {
   function handleResize () {
     setWindowDimensions(getWindowDimensions())
   }
+
   function getWindowDimensions () {
     const { innerWidth: width, innerHeight: height } = window
     return {
@@ -28,6 +29,7 @@ export default function CardDashBoardComponent () {
       height
     }
   }
+
   return (
     <StyledCardDashBoardComponent
       height={windowDimensions.height}

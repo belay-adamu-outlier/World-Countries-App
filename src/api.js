@@ -24,3 +24,12 @@ export async function getCountriesByRegion (region) {
     return { error: 'error' }
   }
 }
+
+export async function getCountriesByName (name) {
+  try {
+    return (await axios.get(`https://restcountries.com/v3.1/name/${name}`))
+      .data
+  } catch {
+    return { error: 'error' }
+  }
+}

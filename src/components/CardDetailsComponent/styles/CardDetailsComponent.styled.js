@@ -92,7 +92,11 @@ export const StyledDetailsWrapper = styled.div`
     width: 100%;
     margin-bottom: 30px;
     h3 {
+      font-size: 1.6rem;
       margin-bottom: 10px;
+      span {
+        font-size: 1.5rem;
+      }
     }
   }
 

@@ -8,16 +8,22 @@ import {
 } from './styles/CardComponent.styled'
 
 export default function CardComponent ({ country }) {
-  const { darkTheme, filterCountry } = useContext(AppContext)
+  const {
+    darkTheme,
+    filterCountry,
+    findBorderCountries
+  } = useContext(AppContext)
 
   function numberWithCommas (x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
-
   return (
     <LinkWrapper
       to='/country'
-      onClick={() => filterCountry(country.name.common)}
+      onClick={() => {
+        filterCountry(country.name.common)
+        findBorderCountries(country.borders)
+      }}
     >
       <StyledCard dark={darkTheme}>
         <StyledFlag bgImg={country.flags.svg} />

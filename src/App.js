@@ -15,6 +15,7 @@ function App () {
     darkTheme,
     selectedCountry
   } = useContext(AppContext)
+
   return (
     <Router>
       <div className='App'>

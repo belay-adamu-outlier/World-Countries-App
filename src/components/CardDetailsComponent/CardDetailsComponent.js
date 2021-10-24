@@ -13,7 +13,9 @@ import {
 export default function CardDetailsComponent () {
   const {
     selectedCountry,
-    darkTheme
+    darkTheme,
+    borderCountries,
+    filterCountry
   } = useContext(AppContext)
   const {
     name: {
@@ -32,7 +34,6 @@ export default function CardDetailsComponent () {
   function numberWithCommas (x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
-
   return (
     <>
       <StyledButtonWrapper>
@@ -68,7 +69,7 @@ export default function CardDetailsComponent () {
           </div>
           <div>
             <h3>
-              Top Level Domain: <span>{tld[0] || 'top-level-domain'}</span>
+              Top Level Domain: <span>{tld ? tld[0] : 'top-level-domain'}</span>
             </h3>
             <h3>
               Currencies: <span>{currencies[Object.keys(currencies)[0]].name || 'currencies'}</span>
@@ -80,9 +81,18 @@ export default function CardDetailsComponent () {
           <StyledBorderContriesWrapper>
             <h2>Border Countries:</h2>
             <div>
-              {/* <StyledCountriesButton>Sweden</StyledCountriesButton>
-              <StyledCountriesButton>Netherlands</StyledCountriesButton>
-              <StyledCountriesButton>Republic of Russia</StyledCountriesButton> */}
+              {borderCountries !== [] &&
+                borderCountries.map(country => {
+                  return (
+                    <StyledCountriesButton
+                      dark={darkTheme}
+                      key={country}
+                      onClick={() => filterCountry(country)}
+                    >
+                      {country}
+                    </StyledCountriesButton>
+                  )
+                })}
             </div>
           </StyledBorderContriesWrapper>
         </StyledDetailsWrapper>

@@ -1,8 +1,13 @@
-import { useEffect, useState, createContext } from 'react'
+import {
+  useEffect,
+  useState,
+  createContext
+} from 'react'
 import {
   getCountries,
   getCountry,
-  getCountriesByRegion
+  getCountriesByRegion,
+  getCountriesByName
 } from '../../api'
 
 const defaultValue = [false, [], false, {}]
@@ -11,6 +16,7 @@ export const AppContext = createContext(defaultValue)
 export default function Context ({ children }) {
   const [countries, setCountries] = useState([])
   const [selectedCountry, setSelectedCountry] = useState(null)
+  const [borderCountries, setBorderCountries] = useState([])
   const [darkTheme, setDarkTheme] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [errorLoading, setErrorLoading] = useState(false)
@@ -20,14 +26,19 @@ export default function Context ({ children }) {
     // eslint-disable-next-line
   }, [])
 
-  async function setFetchedCountry (name) {
+  async function setFetchedCountry () {
     const fetchedCountry = await getCountry()
-    updateState(fetchedCountry)
+    updateStates(fetchedCountry)
+  }
+
+  async function setFetchedCountryByName (name) {
+    const fetchedCountry = await getCountriesByName()
+    updateStates(fetchedCountry)
   }
 
   async function setFetchedCountries () {
     const fetchedCountries = await getCountries()
-    updateState(fetchedCountries)
+    updateStates(fetchedCountries)
   }
 
   async function setFetchedCountriesByRegion (region) {
@@ -35,7 +46,7 @@ export default function Context ({ children }) {
     region === 'World'
       ? fetchedCountries = await getCountries()
       : fetchedCountries = await getCountriesByRegion(region)
-    updateState(fetchedCountries)
+    updateStates(fetchedCountries)
   }
 
   function filterCountry (name) {
@@ -43,8 +54,22 @@ export default function Context ({ children }) {
       return country.name.common === name
     })
     setSelectedCountry(selectedOne)
+    findBorderCountries(selectedOne[0].borders)
   }
-  function updateState(fetchedData) {
+
+  function findBorderCountries (borderCountries) {
+    const borderCtrs = []
+    if (borderCountries) {
+      borderCountries.forEach((borderCountry) => {
+        countries.forEach((country) => {
+          if (borderCountry === country.cca3) borderCtrs.push(country.name.common)
+        })
+      })
+    }
+    return setBorderCountries(borderCtrs)
+  }
+
+  function updateStates (fetchedData) {
     setIsLoading(false)
     if (countries.error) setErrorLoading(true)
     setCountries(fetchedData)
@@ -58,12 +83,15 @@ export default function Context ({ children }) {
         isLoading,
         selectedCountry,
         darkTheme,
+        borderCountries,
         setDarkTheme,
         setFetchedCountries,
         setFetchedCountry,
         LoadByRegion: setFetchedCountriesByRegion,
         toggleTheme: () => setDarkTheme(!darkTheme),
-        filterCountry
+        filterCountry,
+        findBorderCountries,
+        setFetchedCountryByName
       }}
     >
       {children}
