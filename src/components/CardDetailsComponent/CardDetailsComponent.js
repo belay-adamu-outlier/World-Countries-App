@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { AppContext } from '../Context/Context'
 import {
   StyledButton,
@@ -35,10 +36,12 @@ export default function CardDetailsComponent () {
   return (
     <>
       <StyledButtonWrapper>
-        <StyledButton dark={darkTheme}>
-          <i className='fa fa-long-arrow-left' />
-          &nbsp; Back
-        </StyledButton>
+        <Link to='/'>
+          <StyledButton dark={darkTheme}>
+            <i className='fa fa-long-arrow-left' />
+            &nbsp; Back
+          </StyledButton>
+        </Link>
       </StyledButtonWrapper>
       <StyledFlexWrapper>
         <StyledFlag bgImg={svg} />
@@ -60,7 +63,7 @@ export default function CardDetailsComponent () {
               Sub Region: <span>{subregion || 'sub-region'}</span>
             </h3>
             <h3>
-              Capital: <span>{capital[0] || 'capital'}</span>
+              Capital: <span>{capital ? capital[0] : 'capital'}</span>
             </h3>
           </div>
           <div>
