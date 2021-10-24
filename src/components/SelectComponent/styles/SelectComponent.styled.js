@@ -11,7 +11,7 @@ export const StyledSelectWrapper = styled.div`
   color: ${(props) => (props.dark ? 'white' : 'hsl(200, 15%, 8%)')};
   background-color: ${(props) =>
     props.dark ? ' hsl(209, 23%, 22%)' : 'white'};
-  box-shadow: 0px 0px 5px rgb(201 193 193);
+  box-shadow: ${({ dark }) => dark ? '0px 0px 5px rgb(11, 2, 34)' : '0px 0px 5px rgb(201 193 193)'} ;
 
   &::after {
     z-index: 10;

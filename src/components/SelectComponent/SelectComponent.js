@@ -11,7 +11,7 @@ export default function CustomeSelect () {
     darkTheme
   } = useContext(AppContext)
   return (
-    <StyledSelectWrapper>
+    <StyledSelectWrapper dark={darkTheme}>
       <StyledSelect
         dark={darkTheme}
         onChange={(e) => {

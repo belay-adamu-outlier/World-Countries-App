@@ -9,7 +9,7 @@ export const StyledCard = styled.div`
     dark ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 100%)'};
   color: ${({ dark }) => (dark ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)')};
   border-radius: 10px;
-  box-shadow: 0 0 10px gray;
+  box-shadow: ${({ dark }) => dark ? '0px 0px 5px rgb(11, 2, 34)' : '0px 0px 5px rgb(201 193 193)'};
   overflow: hidden;
   transition: all ease-in-out 0.1s;
 

@@ -20,7 +20,7 @@ export const SearchBar = styled.input`
   height: 4.6rem;
   border: none;
   outline: none;
-  box-shadow: 0px 0px 5px rgb(201, 193, 193);
+  box-shadow: ${({ dark }) => dark ? '0px 0px 5px rgb(11, 2, 34)' : '0px 0px 5px rgb(201 193 193)'};
   border-radius: 0.5rem;
   padding-left: 5rem;
   color: ${(props) => (props.dark ? 'white' : 'hsl(200, 15%, 8%)')};
